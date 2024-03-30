@@ -1,13 +1,25 @@
 import javax.swing.*;
 
 public class HealthPanel extends JPanel {
+	
+	public HealthPanel() {
+		addLabels();
+	}
+	
+	private void addLabels() {
+		for (int i = 1; i <= 7; i++) {
+            JLabel label = new JLabel("Life " + i);
+            add(label);
+        }
+	}
+
 	//displays the
 	//number of incorrect guesses the player has made
 	
 	// remaining amount of incorrect guesses that
 	//can be made before the game is lost.
 	
-	//Contain 7 labels 
+	//Contain 7 labels and 7 panels
 	//equal to the amount of incorrect guesses allowed.
 	//To begin with, the labels should be green.
 
