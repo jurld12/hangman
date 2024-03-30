@@ -1,4 +1,4 @@
-
+import java.awt.Dimension;
 import java.awt.Toolkit;
 
 public class Run {
@@ -11,6 +11,8 @@ public class Run {
 		//definition of the size
 		newgame.setSize(600,600);
 		//Find screen size
+		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
+		int x = (int) ((screenSize.getWidth() - newgame.getWidth()) / 2); 
 		
 		newgame.setLocation();
 		//visibility of this main window
