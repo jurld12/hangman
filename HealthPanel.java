@@ -1,39 +1,160 @@
+import java.awt.Color;
 import javax.swing.*;
+import javax.swing.border.Border;
 
 public class HealthPanel extends JPanel {
-	
+
 	public HealthPanel() {
-		addLabels();
-	}
-	
-	private void addLabels() {
-		for (int i = 1; i <= 7; i++) {
-            JLabel label = new JLabel("Life " + i);
-            add(label);
-        }
-	}
-
-	//displays the
-	//number of incorrect guesses the player has made
-	
-	// remaining amount of incorrect guesses that
-	//can be made before the game is lost.
-	
-	//Contain 7 labels and 7 panels
-	//equal to the amount of incorrect guesses allowed.
-	//To begin with, the labels should be green.
-
-	public int removeLife(){
-		int guesses_total = 7;
-		int guesses_left = 7;
-		// called to update the element once an
-		//incorrect guess has been made.
-		//One of the green labels should be turned red. 
+		this.setSize(550,90);
+		this.setVisible(true);
 		
-		// The return value
-		//of the method can indicate 
-		//if the player has run out of 
-		//their allotment of incorrect guesses.
-		return guesses_left;
+		
+		
+		
+		
+	}
+	public JLabel Label1() {
+		JLabel guess1 = new JLabel("1");
+		guess1.setBounds(5,20,80,150);
+		//guess1.setSize(80,120);
+		
+		//guess1.setHorizontalTextPosition(JLabel.LEFT);
+		//guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setForeground(Color.BLACK);
+		guess1.setBackground(Color.GREEN);
+		guess1.setHorizontalTextPosition(JLabel.CENTER);
+		guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setHorizontalAlignment(JLabel.CENTER);
+		guess1.setVerticalAlignment(JLabel.CENTER);
+		guess1.setOpaque(true);
+		guess1.setVisible(true);
+		
+		return guess1;
+
+
+	}
+	public JLabel Label2() {
+		JLabel guess1 = new JLabel("1");
+		guess1.setBounds(90,20,80,150);
+		//guess1.setSize(80,120);
+		
+		//guess1.setHorizontalTextPosition(JLabel.LEFT);
+		//guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setForeground(Color.BLACK);
+		guess1.setBackground(Color.GREEN);
+		guess1.setHorizontalTextPosition(JLabel.CENTER);
+		guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setHorizontalAlignment(JLabel.CENTER);
+		guess1.setVerticalAlignment(JLabel.CENTER);
+		guess1.setOpaque(true);
+		guess1.setVisible(true);
+		
+		return guess1;
+
+
+	}
+	public JLabel Label3() {
+		JLabel guess1 = new JLabel("1");
+		guess1.setBounds(175,20,80,150);
+		//guess1.setSize(80,120);
+		
+		//guess1.setHorizontalTextPosition(JLabel.LEFT);
+		//guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setForeground(Color.BLACK);
+		guess1.setBackground(Color.GREEN);
+		guess1.setHorizontalTextPosition(JLabel.CENTER);
+		guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setHorizontalAlignment(JLabel.CENTER);
+		guess1.setVerticalAlignment(JLabel.CENTER);
+		guess1.setOpaque(true);
+		guess1.setVisible(true);
+		
+		return guess1;
+
+
+	}
+	public JLabel Label4() {
+		JLabel guess1 = new JLabel("1");
+		guess1.setBounds(260,20,80,150);
+		//guess1.setSize(80,120);
+		
+		//guess1.setHorizontalTextPosition(JLabel.LEFT);
+		//guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setForeground(Color.BLACK);
+		guess1.setBackground(Color.GREEN);
+		guess1.setHorizontalTextPosition(JLabel.CENTER);
+		guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setHorizontalAlignment(JLabel.CENTER);
+		guess1.setVerticalAlignment(JLabel.CENTER);
+		guess1.setOpaque(true);
+		guess1.setVisible(true);
+		
+		return guess1;
+
+
+	}
+	public JLabel Label5() {
+		JLabel guess1 = new JLabel("1");
+		guess1.setBounds(345,20,80,150);
+		//guess1.setSize(80,120);
+		
+		//guess1.setHorizontalTextPosition(JLabel.LEFT);
+		//guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setForeground(Color.BLACK);
+		guess1.setBackground(Color.GREEN);
+		guess1.setHorizontalTextPosition(JLabel.CENTER);
+		guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setHorizontalAlignment(JLabel.CENTER);
+		guess1.setVerticalAlignment(JLabel.CENTER);
+		guess1.setOpaque(true);
+		guess1.setVisible(true);
+		
+		return guess1;
+
+
+	}
+	public JLabel Label6() {
+		JLabel guess1 = new JLabel("1");
+		guess1.setBounds(430,20,80,150);
+		//guess1.setSize(80,120);
+		
+		//guess1.setHorizontalTextPosition(JLabel.LEFT);
+		//guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setForeground(Color.BLACK);
+		guess1.setBackground(Color.GREEN);
+		guess1.setHorizontalTextPosition(JLabel.CENTER);
+		guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setHorizontalAlignment(JLabel.CENTER);
+		guess1.setVerticalAlignment(JLabel.CENTER);
+		guess1.setOpaque(true);
+		guess1.setVisible(true);
+		
+		return guess1;
+
+
+	}
+	public JLabel Label7() {
+		JLabel guess1 = new JLabel("1");
+		guess1.setBounds(515,20,80,150);
+		//guess1.setSize(80,120);
+		
+		//guess1.setHorizontalTextPosition(JLabel.LEFT);
+		//guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setForeground(Color.BLACK);
+		guess1.setBackground(Color.GREEN);
+		guess1.setHorizontalTextPosition(JLabel.CENTER);
+		guess1.setVerticalTextPosition(JLabel.CENTER);
+		guess1.setHorizontalAlignment(JLabel.CENTER);
+		guess1.setVerticalAlignment(JLabel.CENTER);
+		guess1.setOpaque(true);
+		guess1.setVisible(true);
+		
+		return guess1;
+
+
+	}
+	public int removeLife() {
+		int inc = 7;
+		return inc;
 	}
 }
