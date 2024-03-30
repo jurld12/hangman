@@ -13,8 +13,8 @@ public class Run {
 		//Find screen size
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
 		int x = (int) ((screenSize.getWidth() - newgame.getWidth()) / 2); 
-		
-		newgame.setLocation();
+		int y = (int) ((screenSize.getHeight() - newgame.getHeight()) / 2);
+		newgame.setLocation(x,y);
 		//visibility of this main window
 		newgame.setVisible(true);
 		
@@ -34,4 +34,5 @@ public class Run {
 	}
 
 }
+
 
