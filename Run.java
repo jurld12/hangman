@@ -24,11 +24,6 @@ public class Run {
 		newgame.setTitle("Hangman");
 		//definition of the size
 		newgame.setSize(600,600);
-		//Find screen size
-		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize(); 
-		int x = (int) ((screenSize.getWidth() - newgame.getWidth()) / 2); 
-		int y = (int) ((screenSize.getHeight() - newgame.getHeight()) / 2);
-		newgame.setLocation(x,y);
 		//visibility of this main window
 		newgame.setVisible(true);
 
