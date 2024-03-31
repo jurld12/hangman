@@ -1,5 +1,7 @@
 import javax.swing.*;
 
+
+
 public class MainWindow extends JFrame {
 
 	public MainWindow() {
@@ -11,9 +13,6 @@ public class MainWindow extends JFrame {
 		this.setResizable(true);
 		
 		//Guessing labels
-		
-		
-		
 		HealthPanel UPanel = new HealthPanel();
 		this.add(UPanel.Label1());
 		this.add(UPanel.Label2());
@@ -22,23 +21,14 @@ public class MainWindow extends JFrame {
 		this.add(UPanel.Label5());
 		this.add(UPanel.Label6());
 		this.add(UPanel.Label7());
+
+		WordPanel guess = new WordPanel("octopus");
+		this.add(guess);
+		this.setResizable(true);
 		
-		/*if (UPanel.removeLife() <= 0)	{
-			//Subroutine for losing!
-		}else {
-			
-		}*/
+		this.setVisible(true);
+		//this.add(guess.add_Uscore());
+		//this.add(guess.add_Uscore());
 		
-		
-		WordPanel guess = new WordPanel("guess");
-		System.out.println(guess.getName().length());
-		for(int i = 0; i < guess.getName().length(); i++) {
-			//Find a way to display underscores here.
-			this.add(guess.add_Uscore());
-			
-		}
-		
-		
-				
 	}
 }
