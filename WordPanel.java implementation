@@ -1,54 +1,57 @@
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
-
 import javax.swing.*;
 
 public class WordPanel extends JPanel{
 
 	public WordPanel() {
-		
+
 	}
 
 	public WordPanel(String guess_word) {
 		this.setName(guess_word);
-		this.setSize(400,90);
+		this.setBounds(50,350,500,200);
+		//this.setBackground(Color.blue);
+		
+		this.setLayout(new FlowLayout(FlowLayout.CENTER));
 		this.setVisible(true);
-	
-	}
-	
-	
-	public JLabel add_Uscore() {
-		
-		JLabel under_score = new JLabel("_");
-		under_score.setBounds(150,35,400,90);
-		under_score.setForeground(Color.BLACK);
-		under_score.setHorizontalTextPosition(JLabel.CENTER);
-		under_score.setVerticalTextPosition(JLabel.CENTER);
-		under_score.setHorizontalAlignment(JLabel.CENTER);
-		under_score.setVerticalAlignment(JLabel.CENTER);
-		under_score.setOpaque(true);
-		under_score.setVisible(true);
-		
 		//Font for underscores
-		Font uscoreFont = new Font("Arial", Font.BOLD,20);
+		Font uscoreFont = new Font("Arial", Font.BOLD,50);
 		//Must create a new font to make the labels extra large
 		//Add font to label
-		under_score.setFont(uscoreFont);
-		return under_score;
-	}
-		
-	
-		
-		//the text on a label in this class 
-		//should be changed to show a number 
-		//of underscores equal to
-		//the number of letters of the word.
-	
 
-		
+
+
+		for(int i = 0; i < guess_word.length(); i++) {
+			JLabel under_score = new JLabel("_");
+			under_score.setFont(uscoreFont);
+			under_score.setHorizontalAlignment(JLabel.CENTER);
+			this.add(under_score);
+			
+			 // Add rigid area to create space between labels
+            if (i < guess_word.length() - 1) {
+                this.add(Box.createRigidArea(new Dimension(20, 0))); // Adjust the width of the gap as needed
+            }
+
+
+
+		}
+
+
+
+
+
+
+	}
+
+
+
 
 	public boolean complete_guess(){
 		//if word is completely guessed
 		return false;
 	}
 }
+
