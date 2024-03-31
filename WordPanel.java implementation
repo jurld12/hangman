@@ -1,0 +1,54 @@
+import java.awt.Color;
+import java.awt.Font;
+
+import javax.swing.*;
+
+public class WordPanel extends JPanel{
+
+	public WordPanel() {
+		
+	}
+
+	public WordPanel(String guess_word) {
+		this.setName(guess_word);
+		this.setSize(400,90);
+		this.setVisible(true);
+	
+	}
+	
+	
+	public JLabel add_Uscore() {
+		
+		JLabel under_score = new JLabel("_");
+		under_score.setBounds(150,35,400,90);
+		under_score.setForeground(Color.BLACK);
+		under_score.setHorizontalTextPosition(JLabel.CENTER);
+		under_score.setVerticalTextPosition(JLabel.CENTER);
+		under_score.setHorizontalAlignment(JLabel.CENTER);
+		under_score.setVerticalAlignment(JLabel.CENTER);
+		under_score.setOpaque(true);
+		under_score.setVisible(true);
+		
+		//Font for underscores
+		Font uscoreFont = new Font("Arial", Font.BOLD,20);
+		//Must create a new font to make the labels extra large
+		//Add font to label
+		under_score.setFont(uscoreFont);
+		return under_score;
+	}
+		
+	
+		
+		//the text on a label in this class 
+		//should be changed to show a number 
+		//of underscores equal to
+		//the number of letters of the word.
+	
+
+		
+
+	public boolean complete_guess(){
+		//if word is completely guessed
+		return false;
+	}
+}
