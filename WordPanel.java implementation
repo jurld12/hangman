@@ -1,10 +1,13 @@
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import javax.swing.*;
 
 public class WordPanel extends JPanel{
+	JLabel under_score;
+	JLabel under_score1;
+	String guess;
+	int incorrect_guesses = 7;
 
 	public WordPanel() {
 
@@ -12,9 +15,9 @@ public class WordPanel extends JPanel{
 
 	public WordPanel(String guess_word) {
 		this.setName(guess_word);
-		this.setBounds(50,350,500,200);
+		this.setBounds(50,420,500,130);
 		//this.setBackground(Color.blue);
-		
+
 		this.setLayout(new FlowLayout(FlowLayout.CENTER));
 		this.setVisible(true);
 		//Font for underscores
@@ -25,15 +28,17 @@ public class WordPanel extends JPanel{
 
 
 		for(int i = 0; i < guess_word.length(); i++) {
-			JLabel under_score = new JLabel("_");
+			;
+			under_score = new JLabel("_");
+
 			under_score.setFont(uscoreFont);
 			under_score.setHorizontalAlignment(JLabel.CENTER);
 			this.add(under_score);
-			
-			 // Add rigid area to create space between labels
-            if (i < guess_word.length() - 1) {
-                this.add(Box.createRigidArea(new Dimension(20, 0))); // Adjust the width of the gap as needed
-            }
+
+			// Add rigid area to create space between labels
+			if (i < guess_word.length() - 1) {
+				this.add(Box.createRigidArea(new Dimension(5, 0))); // Adjust the width of the gap as needed
+			}
 
 
 
@@ -47,11 +52,61 @@ public class WordPanel extends JPanel{
 	}
 
 
+	public boolean guessed(String a) {
+
+		guess = "octopus";
+		// Check if the guessed character is present in the word
+		boolean found = false;
+
+		for(int i = 0; i < guess.length(); i++) {
+			if (incorrect_guesses == 0) {
+				//Lose screen
+				found = false;
+				System.out.println("Game over");
+			} else {
+				
+				if (a.charAt(0) == guess.charAt(i)) { // compare the guessed character with each character in the word
+					//char guess_Char = guess.charAt(i);
+					//String convertedString = Character.toString(guess_Char);
+					String convChar  = String.valueOf(guess.charAt(i));
+					String char_find = under_score.getText();
+					under_score.setText(char_find);
+					under_score.setText(convChar);
+					found = true;
+					System.out.println("Character '" + a + "' is at position " + i + " in the word.");
+
+				} else {
+					//Call remove Life method
+					incorrect_guesses = incorrect_guesses - 1;
+					System.out.println("Character '" + a + "' is not in the word.");
+
+				}
+			}
+		}
+		
+		return found;
+
+	}
+
+
 
 
 	public boolean complete_guess(){
 		//if word is completely guessed
-		return false;
+		boolean full_guess = false;
+		ButtonPanel b = new ButtonPanel();
+		for (int i = 0; i < b.getArray().length; i++) {
+			if (under_score.getText().equals(b.getArray()[i])){
+				full_guess = true;
+				//Win subroutine
+			}
+		}
+		return full_guess;
+		//
+		// condition for all underscores to be true the same no of times as incorrect guesses ) {
+		//if every underscore for the guess has a letter, boolean = true, win screen
+
 	}
 }
+
 
